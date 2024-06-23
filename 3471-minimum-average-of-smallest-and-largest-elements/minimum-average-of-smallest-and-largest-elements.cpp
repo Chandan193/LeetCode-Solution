@@ -1,6 +1,9 @@
 class Solution {
 public:
     double minimumAverage(vector<int>& nums) {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
         int n = nums.size();
         vector<double> avg;
         sort(nums.begin(), nums.end());
