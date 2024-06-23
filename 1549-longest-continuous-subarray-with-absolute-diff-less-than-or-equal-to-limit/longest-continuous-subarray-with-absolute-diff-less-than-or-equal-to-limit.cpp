@@ -1,6 +1,9 @@
 class Solution {
 public:
     int longestSubarray(vector<int>& nums, int limit) {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
     multiset<int> window;
     int left = 0, maxLength = 0;
 
