@@ -1,6 +1,9 @@
 class Solution {
 public:
     int minKBitFlips(vector<int>& nums, int k) {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
     int n = nums.size();
     vector<int> hint(n, 0);
     int flips = 0, flip = 0;
