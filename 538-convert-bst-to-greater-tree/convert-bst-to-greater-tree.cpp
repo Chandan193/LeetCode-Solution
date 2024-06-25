@@ -11,15 +11,18 @@
  */
 class Solution {
 public:
-     void reverseTraversal(TreeNode* node, int& sum) {
+    void reverseTraversal(TreeNode* node, int& sum) {
         if (node == nullptr) return;
         reverseTraversal(node->right, sum);
         sum += node->val;
         node->val = sum;
         reverseTraversal(node->left, sum);
     }
-    
+
     TreeNode* convertBST(TreeNode* root) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        
         int sum = 0;
         reverseTraversal(root, sum);
         return root;
