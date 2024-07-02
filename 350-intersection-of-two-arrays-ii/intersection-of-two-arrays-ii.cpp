@@ -1,9 +1,6 @@
 class Solution {
 public:
     vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
-        ios_base::sync_with_stdio(false);
-        cin.tie(NULL);
-
         int m = nums1.size();
         int n = nums2.size();
 
