@@ -9,15 +9,15 @@
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
-        map<ListNode*, int> hashmap;
-        ListNode* temp = head;
-        while(temp != NULL){
-            if(hashmap.find(temp) != hashmap.end()){
-                return true;
-            }
-            hashmap[temp] = 1;
-            temp = temp -> next;
+        ListNode* left = head;
+        ListNode* right = head;
+
+        while(right != nullptr && right->next != nullptr){
+            left = left -> next;
+            right = right -> next -> next;
+            if(left == right) return true;
         }
+
         return false;
     }
 };
