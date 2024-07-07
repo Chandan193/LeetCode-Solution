@@ -11,6 +11,9 @@
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        
         ListNode* l = new ListNode(0);  
         ListNode* head = l; 
         int sum=0, rem=0, car=0;
