@@ -1,6 +1,9 @@
 class Solution {
 public:
     double averageWaitingTime(vector<vector<int>>& customers) {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
     double n = customers.size();
     double time = customers[0][0] + customers[0][1];
     double wait = customers[0][0];
