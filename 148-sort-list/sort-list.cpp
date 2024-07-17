@@ -11,6 +11,9 @@
 class Solution {
 public:
     ListNode* sortList(ListNode* head) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+
         if(head==nullptr) return head;
 
         vector<int> v;
