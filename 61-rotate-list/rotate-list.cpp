@@ -11,6 +11,9 @@
 class Solution {
 public:
     ListNode* rotateRight(ListNode* head, int k) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        
         if(head == nullptr) return head;
         ListNode* curr = head;
         vector<int> v;
