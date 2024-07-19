@@ -1,5 +1,10 @@
 class Solution {
 public:
+    Solution(){
+         ios_base::sync_with_stdio(false);
+         cin.tie(NULL);
+         cout.tie(NULL);
+    }
     vector<int> luckyNumbers (vector<vector<int>>& matrix) {
         int m = matrix.size();
         int n = matrix[0].size();
