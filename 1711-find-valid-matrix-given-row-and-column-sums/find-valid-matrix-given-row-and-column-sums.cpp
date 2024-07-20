@@ -1,6 +1,9 @@
 class Solution {
 public:
     vector<vector<int>> restoreMatrix(vector<int>& rowSum, vector<int>& colSum) {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
     int m = rowSum.size();
     int n = colSum.size();
 
