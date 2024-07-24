@@ -9,6 +9,9 @@ public:
     return stoi(ms);
     }
     vector<int> sortJumbled(vector<int>& mapping, vector<int>& nums) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        
         int n = nums.size();
         if(n==1) return {nums[0]};
 
