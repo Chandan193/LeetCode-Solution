@@ -1,12 +1,12 @@
 class Solution {
 public:
     int mapNum(int num, vector<int>& mapping) {
-    string numStr = to_string(num);
-    string mappedStr;
-    for (char c : numStr) {
-        mappedStr += to_string(mapping[c - '0']);
+    string numS = to_string(num);
+    string ms;
+    for (char c : numS) {
+        ms += to_string(mapping[c - '0']);
         }
-    return stoi(mappedStr);
+    return stoi(ms);
     }
     vector<int> sortJumbled(vector<int>& mapping, vector<int>& nums) {
         int n = nums.size();
