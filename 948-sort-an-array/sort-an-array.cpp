@@ -37,6 +37,9 @@ public:
     merge(arr, low, mid, high);  
     }
     vector<int> sortArray(vector<int>& nums) {
+        std::ios::sync_with_stdio(false);
+        std::cin.tie(nullptr);
+        
         mergeSort(nums, 0, nums.size()-1);
         return nums;
     }
