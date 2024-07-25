@@ -1,46 +1,33 @@
 class Solution {
 public:
-    void merge(vector<int> &arr, int low, int mid, int high) {
-    vector<int> temp; 
-    int left = low;      
-    int right = mid + 1;   
-    while (left <= mid && right <= high) {
-        if (arr[left] <= arr[right]) {
-            temp.push_back(arr[left]);
-            left++;
-        }
-        else {
-            temp.push_back(arr[right]);
-            right++;
-        }
+   void heapify(vector<int>& nums, int n, int i) {
+    int largest = i;
+    int left = 2 * i + 1;
+    int right = 2 * i + 2;
+
+    if (left < n && nums[left] > nums[largest])
+        largest = left;
+
+    if (right < n && nums[right] > nums[largest])
+        largest = right;
+
+    if (largest != i) {
+        swap(nums[i], nums[largest]);
+        heapify(nums, n, largest);
     }
-    while (left <= mid) {
-        temp.push_back(arr[left]);
-        left++;
+    }
+    void heapSort(vector<int>& nums) {
+    int n = nums.size();
+    for (int i = n / 2 - 1; i >= 0; i--)
+        heapify(nums, n, i);
+    for (int i = n - 1; i > 0; i--) {
+        swap(nums[0], nums[i]);
+        heapify(nums, i, 0);
+    }
     }
 
-    while (right <= high) {
-        temp.push_back(arr[right]);
-        right++;
-    }
-
-    for (int i = low; i <= high; i++) {
-        arr[i] = temp[i - low];
-        }
-    }
-
-    void mergeSort(vector<int> &arr, int low, int high) {
-    if (low >= high) return;
-    int mid = (low + high) / 2 ;
-    mergeSort(arr, low, mid);  
-    mergeSort(arr, mid + 1, high); 
-    merge(arr, low, mid, high);  
-    }
     vector<int> sortArray(vector<int>& nums) {
-        std::ios::sync_with_stdio(false);
-        std::cin.tie(nullptr);
-        
-        mergeSort(nums, 0, nums.size()-1);
-        return nums;
+    heapSort(nums);
+    return nums;
     }
 };
