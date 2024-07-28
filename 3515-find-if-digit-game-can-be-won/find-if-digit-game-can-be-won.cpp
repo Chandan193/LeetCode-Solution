@@ -6,6 +6,6 @@ public:
         if(n<=9) sd += n;
         else dd += n;
       }  
-      return (sd>dd) || (sd<dd);
+      return sd!=dd;
     }
 };
