@@ -1,10 +1,7 @@
 class Solution {
 public:
     bool lemonadeChange(vector<int>& bills) {
-        if(bills[0]>5) return false;
-
         int five = 0, ten = 0;
-
         for(int num : bills){
             if(num == 5){
                 five++;
