@@ -3,15 +3,12 @@ public:
     bool lemonadeChange(vector<int>& bills) {
         int five = 0, ten = 0;
         for(int num : bills){
-            if(num == 5){
-                five++;
-            }
-            else if(num == 10){
-                if(five>0){
-                    five--;
-                }else{
+            five += (num==5) ? 1 : 0;
+            if(num == 10){
+                if(five==0){
                     return false;
                 }
+                five--;
                 ten++;
             }
             else if(num==20){
