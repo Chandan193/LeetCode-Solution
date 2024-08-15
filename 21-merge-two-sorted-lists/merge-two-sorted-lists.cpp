@@ -11,10 +11,14 @@
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+        if(!list1 && !list2) return nullptr;
+        if(!list1) return list2;
+        if(!list2) return list1;
+
         ListNode* c1 = list1;
         ListNode* c2 = list2;
         
-        ListNode* newHead = new ListNode(1000);
+        ListNode* newHead = new ListNode(0);
         ListNode* temp = newHead;
 
         while(c1!=nullptr && c2!=nullptr){
