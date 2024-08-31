@@ -2,7 +2,7 @@ class Solution {
 public:
     double maxProbability(int n, vector<vector<int>>& edges, vector<double>& succProb, int start_node, int end_node) {
     vector<vector<pair<int, double>>> g(n);
-    for (int i = 0; i < edges.size(); ++i) {
+    for (int i = 0; i < edges.size(); i++) {
         g[edges[i][0]].emplace_back(edges[i][1], succProb[i]);
         g[edges[i][1]].emplace_back(edges[i][0], succProb[i]);
     }
