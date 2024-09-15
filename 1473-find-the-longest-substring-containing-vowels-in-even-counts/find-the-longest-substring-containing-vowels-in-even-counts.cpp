@@ -1,6 +1,10 @@
 class Solution {
 public:
     int findTheLongestSubstring(string s) {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    std::cout.tie(nullptr);
+    
     unordered_map<string, int> state_map;
     string state = "00000";  
     state_map[state] = -1;  
