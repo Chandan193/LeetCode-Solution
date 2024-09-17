@@ -1,6 +1,11 @@
 class Solution {
 public:
     vector<string> uncommonFromSentences(string s1, string s2) {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    std::cout.tie(nullptr);
+
+    
     unordered_map<string, int> mp1, mp2;
     string t1 = "", t2 = "";
     
