@@ -13,8 +13,6 @@ public:
 
         if(temp.length()>0) arr.push_back(temp);
 
-        for(string i : arr) cout<<i<<" ";
-
         if(arr.size()==1){
             string t = arr[0];
             if(t[0] == t.back()) return true;
