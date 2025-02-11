@@ -1,6 +1,10 @@
 class Solution {
 public:
     string removeOccurrences(string s, string part) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+
+
         stack<char> stk;
         int n = part.length();
         for(int i=0; i<s.length(); i++){
