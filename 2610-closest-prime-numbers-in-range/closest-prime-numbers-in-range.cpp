@@ -1,17 +1,16 @@
 class Solution {
 public:
-    bool checkPrime(int n, int i = 2){
+    bool checkPrime(int n){
         if(n==1) return false;
-        if(n==2) return true;
-        if(n%i==0) return false;
-        if(i*i > n) return true;
-        
-        return checkPrime(n, i+1);
+        for(int i=2; i<=sqrt(n); i++){
+            if(n%i==0) return false;
+        }
+        return true;
     }
     vector<int> closestPrimes(int left, int right) {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     int num1=-1, num2=-1;
     vector<int> v;
 
