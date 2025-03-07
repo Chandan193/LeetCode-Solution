@@ -9,6 +9,9 @@ public:
         return checkPrime(n, i+1);
     }
     vector<int> closestPrimes(int left, int right) {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
     int num1=-1, num2=-1;
     vector<int> v;
 
