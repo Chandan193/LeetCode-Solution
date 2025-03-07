@@ -1,11 +1,12 @@
 class Solution {
 public:
-    bool checkPrime(int n){
+    bool checkPrime(int n, int i = 2){
         if(n==1) return false;
-        for(int i=2; i<=sqrt(n); i++){
-            if(n%i==0) return false;
-        }
-        return true;
+        if(n==2) return true;
+        if(n%i==0) return false;
+        if(i*i > n) return true;
+        
+        return checkPrime(n, i+1);
     }
     vector<int> closestPrimes(int left, int right) {
     int num1=-1, num2=-1;
