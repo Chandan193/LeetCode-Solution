@@ -29,7 +29,8 @@ public:
         for(int i=0; i<n; i++){
             for(int j=i+1; j<n; j++){
                 for(int k=j+1; k<n; k++){
-                    fun(digits[i], digits[j], digits[k], st);
+                    if(digits[i]%2==0 || digits[j]%2==0 || digits[k]%2==0) 
+                        fun(digits[i], digits[j], digits[k], st);
                 }
             }
         }
