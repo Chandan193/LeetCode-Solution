@@ -2,30 +2,30 @@ class Solution {
 public:
     int lengthAfterTransformations(string s, int t) {
     const int MOD = 1e9 + 7;
-    vector<long long> freq(26, 0);
+    vector<int> mp(26, 0);
+    for(char c : s) mp[c-'a']++;
 
-    for (char c : s) {
-        freq[c - 'a']++;
-    }
-
-    while (t--) {
-        vector<long long> nextFreq(26, 0);
-        for (int i = 0; i < 26; ++i) {
-            if (i == 25) {
-                nextFreq[0] = (nextFreq[0] + freq[25]) % MOD;
-                nextFreq[1] = (nextFreq[1] + freq[25]) % MOD;
-            } else {
-                nextFreq[i + 1] = (nextFreq[i + 1] + freq[i]) % MOD;
+    while(t>0){
+        vector<int> temp(26, 0);
+        for(int i=0; i<26; i++){
+            char c = i +'a';
+            int fq = mp[i];
+            if(c=='z'){
+                temp['a'-'a'] = (temp['a'-'a'] + fq)%MOD;
+                temp['b'-'a'] = (temp['b'-'a'] + fq)%MOD;
+            }
+            else{
+                temp[(c+1)-'a'] = (temp[(c+1)-'a'] + fq)%MOD;
             }
         }
-        freq = nextFreq;
+        mp = move(temp); // no copy wiint be there
+        t--;
     }
 
-    long long result = 0;
-    for (int i = 0; i < 26; ++i) {
-        result = (result + freq[i]) % MOD;
-    }
+    int ans = 0;
 
-    return (int)result;
+    for(auto it : mp) ans = (ans + it) % MOD;
+
+    return (ans%MOD);
     }
 };
