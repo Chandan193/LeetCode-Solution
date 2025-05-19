@@ -1,10 +1,11 @@
 class Solution {
 public:
     string triangleType(vector<int>& nums) {
-        if((nums[0]+nums[1]>nums[2] && nums[1]+nums[2]>nums[0] && nums[0]+nums[2]>nums[1])){
-        if(nums[0]==nums[1] && nums[1]==nums[2] && nums[2]==nums[0]) return "equilateral";
-        else if(nums[0]!=nums[1] && nums[1]!=nums[2] && nums[2]!=nums[0]) return "scalene";
-        else if(nums[0]==nums[1] || nums[1]!=nums[2] || nums[2]!=nums[0]) return "isosceles";
+        int x = nums[0], y = nums[1], z = nums[2];
+        if((x+y>z && y+z>x && x+z>y)){
+        if(x==y && y==z && z==x) return "equilateral";
+        else if(x!=y && y!=z && z!=x) return "scalene";
+        else if(x==y || y!=z || z!=x) return "isosceles";
         }
         return "none";
     }
