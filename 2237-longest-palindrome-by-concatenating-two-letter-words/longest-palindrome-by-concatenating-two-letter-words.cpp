@@ -19,7 +19,6 @@ public:
 
        for(auto it : mp){
         string s = it.first;
-        cout<<s;
         if(s[0]==s[1] && it.second>0){
             flag = true;
             break;
