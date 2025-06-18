@@ -15,12 +15,10 @@ public:
             }
         }
 
-        if (ans.size() > 0) {
-            for (int i = 0; i < ans.size(); i++) {
-                if ((ans[i][2] - ans[i][0]) > k) {
-                    ans.clear();
-                    break;
-                }
+        for (int i = 0; i < ans.size(); i++) {
+            if ((ans[i][2] - ans[i][0]) > k) {
+                ans.clear();
+                break;
             }
         }
 
