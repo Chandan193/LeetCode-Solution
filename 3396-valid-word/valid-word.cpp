@@ -10,6 +10,7 @@ public:
             else c++;
         }
         else if(x>='0' && x<='9') d++;
+        else return false;
        }
        return (v>=1 && c>=1 && (v+c+d)==word.size());
     }
