@@ -5,7 +5,7 @@ public:
         for(int i=0; i<fruits.size(); i++){
             int f = fruits[i];
             for(int j=0; j<baskets.size(); j++){
-                if(baskets[j]>=f){
+                if(baskets[j]!=0 && baskets[j]>=f){
                     baskets[j] = 0;
                     cnt++;
                     break;
