@@ -16,12 +16,12 @@ public:
             b--;
             a++;
         }
-        if(check(a) && check(b)) return{a,b};
+        if(check(a)) return{a,b};
         while(check(a)==false){
             a++;
             b--;
         }
-        if(check(a) && check(b)) return{a,b};
+        if(check(b)) return{a,b};
         return {1,1};
     }
 };
